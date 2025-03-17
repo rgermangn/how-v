@@ -112,14 +112,15 @@ Opções de papel na equipe:
 - Blog ou seção de notícias
 - Formulário estruturado de contato no site (para padronizar as mensagens recebidas)
 - Banco de dados para armazenar (pode servir para análises de negócio no futuro) ou somente direto no e-mail/whatsapp?
-- Preferências visuais e estilo.
+- Preferências visuais e estilo
 
 ### Funcionalidades desejadas
 
-- Galeria de fotos e vídeos.
-- Mapa de localização.
-- Integração com redes sociais.
-- Área de clientes.
+- Galeria de fotos e vídeos
+- Mapa de localização
+- Integração com redes sociais
+- Área de clientes
+- Técnicas de SEO para melhorar o posicionamento nos buscadores
 
 ### Preferências visuais e de estilo
 
@@ -132,7 +133,7 @@ Opções de papel na equipe:
 
 ## Orçamento
 
-- A entrega do site será em servidor de hospedagem gratuita.
+- A entrega do site será em servidor de hospedagem gratuita
 - Não nos responsabilizamos por:
 	- Outros dispositivos
 	- Mudanças no servidor de hospedagem do site
@@ -144,8 +145,8 @@ Resumindo, o custo será ZERO.
 
 ## Cronograma
 
-- **31/03/2025** - Entrega do relatório parcial, diagramas, protótipos, pontos positivos e negativos do projeto.
-- **24-04-2025** - Entrega do relatório final e site concluído.
+- **31/03/2025** - Entrega do relatório parcial, diagramas, protótipos, pontos positivos e negativos do projeto
+- **24-04-2025** - Entrega do relatório final e site concluído
 
 ## Encerramento
 
