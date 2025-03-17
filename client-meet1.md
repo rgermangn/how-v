@@ -16,6 +16,7 @@ Somos uma equipe de estudantes de Análise e Desenvolvimento de Sistemas que des
 - Yago de Freitas Silva Peixoto
 
 Opções de papel na equipe:
+- Arquiteto de Software
 - Frontend Developer
 - Backend Developer
 - Quality Assurance
