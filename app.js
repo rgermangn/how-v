@@ -4,35 +4,45 @@ function toggleMenu() {
     nav.classList.toggle('active');
   }
 
-  // Carrossel
-  const container = document.getElementById('carousel-container');
-const dots = document.querySelectorAll('.dot');
-let currentIndex = 0;
 
-function moveToSlide(index) {
-  const percentage = index * -33.33;
-  container.style.transform = `translateX(${percentage}%)`;
-  currentIndex = index;
-
-  dots.forEach(dot => dot.classList.remove('active'));
-  if (dots[index]) dots[index].classList.add('active');
+function toggleMenu() {
+  const navMenu = document.getElementById('nav-menu');
+  navMenu.classList.toggle('active');
 }
 
+let currentSlide = 1;
 
-  // Swipe touch
-  let startX = 0;
+function moveToSlide(index) {
+  const items = document.querySelectorAll('.carousel-item');
+  const track = document.querySelector('.carousel-track');
+  const dots = document.querySelectorAll('.dot');
 
-  container.addEventListener('touchstart', (e) => {
-    startX = e.touches[0].clientX;
-  });
+  currentSlide = index;
 
-  container.addEventListener('touchend', (e) => {
-    const endX = e.changedTouches[0].clientX;
-    const diffX = startX - endX;
-
-    if (diffX > 50 && currentIndex < 2) {
-      moveToSlide(currentIndex + 1);
-    } else if (diffX < -50 && currentIndex > 0) {
-      moveToSlide(currentIndex - 1);
+  items.forEach((item, i) => {
+    item.classList.remove('active');
+    if (i === index) {
+      item.classList.add('active');
     }
   });
+
+  const offset = (index * (items[0].offsetWidth + 30)) - ((track.offsetWidth - items[0].offsetWidth) / 2);
+  track.style.transform = `translateX(-${offset}px)`;
+
+  dots.forEach((dot, i) => {
+    dot.classList.toggle('active', i === index);
+  });
+}
+
+// Permitir clique na imagem para mudar de slide
+document.querySelectorAll('.carousel-item').forEach((item, index) => {
+  item.addEventListener('click', () => {
+    moveToSlide(index);
+  });
+});
+
+
+// Inicializar o primeiro como ativo
+moveToSlide(currentSlide);
+
+
