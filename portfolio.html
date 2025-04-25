@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="assets/image/logokeytogo.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="style/style.css" />
+    <title>Key To Go</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init("IRTkKtAAwJi9o-y5x");
+      })();
+    </script>
+  </head>
+
+  <body class="contato_container">
+    <div class="keytogo-container">
+      <header>
+        <div class="logo">KEY TO GO</div>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <nav id="nav-menu">
+          <a href="index.html">Home</a>
+          <a href="#">Sobre</a>
+          <a href="#">Portfólio</a>
+          <a href="#">Contato</a>
+          <a href="#">Serviços</a>
+          <a href="#">Diário</a>
+        </nav>
+      </header>
+
+      <section class="portfolio">
+        <div class="container">
+          <h1 class="title">Nosso Portfólio</h1>
+          <p class="subtitle">Conheça alguns dos projetos que entregamos com excelência.</p>
+      
+          <div class="portfolio-grid">
+            <div class="portfolio-item" onclick="toggleDetails(this)">
+              <img src="assets/image/projeto1.jpg" alt="Projeto 1">
+              <h3>Projeto Residencial</h3>
+              <p class="short-description">Execução e gerenciamento de obra residencial completa.</p>
+              <div class="details">
+                <p>Este projeto inclui a construção da área gourmet, reforma dos dormitórios, pintura geral e modernização da fachada.</p>
+              </div>
+            </div>
+      
+            <div class="portfolio-item" onclick="toggleDetails(this)">
+              <img src="assets/image/projeto2.jpg" alt="Projeto 2">
+              <h3>Ambiente Corporativo</h3>
+              <p class="short-description">Reforma e modernização de espaço empresarial.</p>
+              <div class="details">
+                <p>Planejamento de salas de reunião, instalação de divisórias acústicas e integração de áreas de convivência modernas.</p>
+              </div>
+            </div>
+      
+            <div class="portfolio-item" onclick="toggleDetails(this)">
+              <img src="assets/image/projeto3.jpeg" alt="Projeto 3">
+              <h3>Design de Interiores</h3>
+              <p class="short-description">Projeto de interiores com foco em funcionalidade e estilo.</p>
+              <div class="details">
+                <p>Criação de ambientes elegantes, escolha de mobiliário personalizado e iluminação estratégica para espaços residenciais e comerciais.</p>
+              </div>
+            </div>
+
+            <div class="portfolio-item" onclick="toggleDetails(this)">
+                <img src="assets/image/projeto4.jpg" alt="Projeto 4">
+                <h3>Projeto Comercial</h3>
+                <p class="short-description">Execução e gerenciamento de obra residencial completa.</p>
+                <div class="details">
+                  <p>Construção ou reforma de lojas, restaurantes, escritórios e espaços comerciais, otimizando o layout para funcionalidade e experiência do cliente.</p>
+                </div>
+            </div>
+
+            <div class="portfolio-item" onclick="toggleDetails(this)">
+                <img src="assets/image/projeto5.jpg" alt="Projeto 5">
+                <h3>Construção de Condomínios</h3>
+                <p class="short-description">Execução e gerenciamento de obra residencial completa.</p>
+                <div class="details">
+                  <p>Desenvolvimento de empreendimentos residenciais coletivos, com execução de infraestrutura, áreas comuns e unidades habitacionais.</p>
+                </div>
+            </div>
+
+            <div class="portfolio-item" onclick="toggleDetails(this)">
+                <img src="assets/image/projeto6.jpg" alt="Projeto 6">
+                <h3>Projeto de Reforma</h3>
+                <p class="short-description">Execução e gerenciamento de obra residencial completa.</p>
+                <div class="details">
+                  <p>Reforma completa de casas ou apartamentos, modernizando ambientes, atualizando instalações elétricas, hidráulicas e acabamentos.</p>
+                </div>
+            </div>
+
+
+            
+          </div>
+        </div>
+      </section>
+      
+
+      <footer>
+        <div class="footer-section">
+          <h3>Informações</h3>
+          <p>Endereço</p>
+          <p>&#9742;: +55 (41) 9 9666-9588</p>
+          <p>Email</p>
+        </div>
+        <div class="footer-section">
+          <h3>Links úteis</h3>
+          <p>Política de Privacidade</p>
+          <p>Termos de Uso</p>
+          <p>Suporte</p>
+        </div>
+        <div class="footer-section">
+          <h3>Redes Sociais</h3>
+          <p>Facebook</p>
+          <a
+            href="https://www.instagram.com/key_to_go_gestao_de_obra_/"
+            taget="_blank"
+          >
+            <p>Instagram</p>
+          </a>
+          <p>LinkedIn</p>
+        </div>
+      </footer>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
