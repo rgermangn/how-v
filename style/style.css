@@ -3,7 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 body {
@@ -18,9 +18,8 @@ body {
   max-width: 100%;
 }
 
-
 .hero-wrapper {
-  background: linear-gradient(180deg, #5782A6 0%, #487295 79.54%, #376082 100%);
+  background: linear-gradient(180deg, #5782a6 0%, #487295 79.54%, #376082 100%);
 }
 
 /* Header/Navbar styles */
@@ -71,8 +70,9 @@ nav a {
 .menu-toggle {
   color: #fafafa;
 }
+
 nav a:after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
@@ -174,7 +174,7 @@ nav a:hover:after {
   height: 100%;
   object-fit: cover;
   border-radius: 15px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .dots {
@@ -231,12 +231,144 @@ footer {
   color: #a19e9e;
 }
 
+.footer-section a {
+  text-decoration: none;
+}
+
+.footer-section a:hover {
+  text-decoration: underline;
+}
+
+/* Contact styles */
+.contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact_form {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  min-width: 50vw;
+  max-width: 60vw;
+  margin: 20px;
+}
+
+.contact_form div {
+  margin-bottom: 15px;
+}
+
+/* Estilos para as labels */
+.contact_form label {
+  display: block;
+  margin-bottom: 5px;
+  color: #555;
+  font-weight: bold;
+}
+
+/* Estilos para os inputs de texto, telefone e email */
+.contact_form input[type="text"],
+.contact_form input[type="tel"],
+.contact_form input[type="email"] {
+  width: calc(100% - 12px);
+  /* Largura total menos o padding */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  /* Garante que padding e border não aumentem a largura */
+  font-size: 16px;
+}
+
+/* Estilos para a textarea (campo de mensagem) */
+.contact_form textarea {
+  width: calc(100% - 12px);
+  /* Largura total menos o padding */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 16px;
+  resize: vertical;
+  /* Permite redimensionar verticalmente */
+  min-height: 100px;
+}
+
+/* Estilos para o elemento <small> (opcional) */
+.contact_form small {
+  display: block;
+  color: #777;
+  margin-top: 5px;
+  font-size: 0.9em;
+}
+
+/* Estilos para o botão de enviar */
+.contact_form button[type="submit"] {
+  background-color: #007bff;
+  /* Cor azul primária */
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  /* Largura total do botão */
+}
+
+.contact_form button[type="submit"]:hover {
+  background-color: #0056b3;
+  /* Cor azul mais escura no hover */
+}
+
+.whatsapp {
+  text-align: center;
+  /* Centraliza o link */
+  margin-top: 20px;
+  /* Adiciona espaço acima da seção do WhatsApp */
+}
+
+.whatsapp a {
+  /* Cor verde do WhatsApp */
+  color: #25d366;
+  /* Remove o sublinhado padrão do link */
+  text-decoration: none;
+  /* Deixa o texto do link em negrito */
+  font-weight: bold;
+  /* Permite alinhar o ícone e o texto */
+  display: inline-flex;
+  /* Alinha os itens verticalmente */
+  flex-direction: column;
+  /* Alinha verticalmente o ícone e o texto */
+  align-items: center;
+  /* Adiciona um pequeno espaço entre o ícone e o texto */
+  gap: 4px;
+}
+
+.whatsapp a:hover {
+  text-decoration: underline;
+  /* Adiciona sublinhado no hover para feedback visual */
+}
+
+.whatsapp a img {
+  width: 48px;
+  /* Define a largura do ícone */
+  height: auto;
+  /* Mantém a proporção do ícone */
+  vertical-align: bottom;
+  /* Alinha verticalmente o ícone com o texto (alternativa ao align-items) */
+}
+
 /* Responsive styles */
 @media (max-width: 900px) {
   header {
     padding: 15px 20px;
   }
-  
+
   .menu-toggle {
     display: block;
   }
@@ -254,16 +386,14 @@ footer {
     transition: right 0.3s;
   }
 
-  
-
   nav a {
     color: #000000;
   }
-  
+
   nav.active {
     right: 20px;
   }
-  
+
   .hero {
     flex-direction: column;
     padding: 120px 20px 40px;
@@ -275,22 +405,22 @@ footer {
     max-width: 100%;
     height: auto;
   }
-  
+
   .hero-image img {
     width: 100%;
     height: auto;
     object-fit: cover;
     display: block;
   }
-  
+
   .hero-text h1 {
     font-size: 2.5rem;
   }
-  
+
   .carousel {
     padding: 30px 20px;
   }
-  
+
   footer {
     flex-direction: column;
     gap: 30px;
@@ -324,34 +454,43 @@ footer {
   .dots {
     display: none;
   }
+
+  .contact_form input[type="text"],
+  .contact_form input[type="tel"],
+  .contact_form input[type="email"],
+  .contact_form textarea,
+  .contact_form button[type="submit"] {
+    font-size: 16px;
+    /* Reduz um pouco a fonte em telas menores */
+  }
 }
 
 @media (max-width: 1024px) {
-.carousel-track {
-  justify-content: flex-start;
-  padding-left: 20px;
-}
+  .carousel-track {
+    justify-content: flex-start;
+    padding-left: 20px;
+  }
 
-.carousel-container {
-  overflow-x: scroll;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-}
+  .carousel-container {
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
 
-.carousel-item {
-  flex: 0 0 80%;
-  scroll-snap-align: center;
-  opacity: 1 !important;
-  transform: scale(1) !important;
-  filter: none !important;
-}
+  .carousel-item {
+    flex: 0 0 80%;
+    scroll-snap-align: center;
+    opacity: 1 !important;
+    transform: scale(1) !important;
+    filter: none !important;
+  }
 
-.carousel-item img {
-  pointer-events: none;
-}
+  .carousel-item img {
+    pointer-events: none;
+  }
 
-.dots {
-  display: none; /* Esconde as bolinhas no mobile, se quiser */
-}
-
+  .dots {
+    display: none;
+    /* Esconde as bolinhas no mobile, se quiser */
+  }
 }
