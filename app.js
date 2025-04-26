@@ -52,19 +52,40 @@ document.addEventListener('DOMContentLoaded', function() {
   form.addEventListener('submit', function(event) {
     event.preventDefault();
     
-    // Melhor prática: carregar as credenciais de um arquivo .env ou variáveis de ambiente
-    emailjs.sendForm('service_778o4kx', 'template_k3vkc3o', this)
-      .then(function(response) {
-        console.log('Success:', response);
-        alert('Seu email foi enviado!');
-        form.reset(); // Limpar o formulário após envio bem-sucedido
-      }, function(error) {
-        console.error('Error:', error);
-        alert('Ops... Algo deu errado. Por favor, tente novamente.');
-      });
+    const formData = {
+      nome: document.getElementById('nome').value,
+      telefone: document.getElementById('telefone').value,
+      email: document.getElementById('email').value || "Não informado",
+      assunto: document.getElementById('assunto').value,
+      mensagem: document.getElementById('mensagem').value
+    };
+    
+    const submitButton = form.querySelector('button[type="submit"]');
+    submitButton.disabled = true;
+    submitButton.textContent = 'Enviando...';
+    
+    fetch('/api/send-email', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData)
+    })
+    .then(response => response.json())
+    .then(data => {
+      alert('Mensagem enviada com sucesso!');
+      form.reset();
+    })
+    .catch(error => {
+      alert('Erro ao enviar mensagem');
+      console.error('Error:', error);
+    })
+    .finally(() => {
+      submitButton.disabled = false;
+      submitButton.textContent = 'Enviar';
+    });
   });
 });
-
 // document.addEventListener('DOMContentLoaded', function() {
 //   const contactForm = document.querySelector('.contact_form form');
 //
