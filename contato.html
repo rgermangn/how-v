@@ -18,12 +18,51 @@
     />
     <script
       type="text/javascript"
-      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
     ></script>
     <script type="text/javascript">
       (function () {
-        emailjs.init("IRTkKtAAwJi9o-y5x");
+        // https://dashboard.emailjs.com/admin/account
+        emailjs.init({
+          publicKey: "Tgo8Pm5fDkJxrbGid",
+        });
       })();
+    </script>
+    <script type="text/javascript">
+      window.onload = function () {
+        document
+          .getElementById("contact-form")
+          .addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const mensagemSucesso = document.getElementById("mensagem-sucesso");
+            const mensagemErro = document.getElementById("mensagem-erro");
+
+            emailjs.sendForm("service_ibi01gb", "template_k3vkc3o", this).then(
+              (response) => {
+                console.log("SUCCESS!", response);
+                mensagemSucesso.textContent = "Mensagem enviada com sucesso!";
+                mensagemSucesso.style.display = "block";
+                mensagemErro.style.display = "none"; // Garante que a mensagem de erro esteja escondida
+
+                // Opcional: Limpar o formulário após o sucesso
+                document.getElementById("contact-form").reset();
+
+                // Opcional: Esconder a mensagem de sucesso após alguns segundos
+                setTimeout(() => {
+                  mensagemSucesso.style.display = "none";
+                }, 5000); // 5000 milissegundos = 5 segundos
+              },
+              (error) => {
+                console.log("FAILED...", error);
+                mensagemErro.textContent =
+                  "Ocorreu um erro ao enviar a mensagem.";
+                mensagemErro.style.display = "block";
+                mensagemSucesso.style.display = "none"; // Garante que a mensagem de sucesso esteja escondida
+              },
+            );
+          });
+      };
     </script>
   </head>
 
@@ -46,6 +85,7 @@
           <div class="hero-text">
             <h1>Sua mensagem é o primeiro passo . Conte-nos o que precisa .</h1>
             <p>Entre em contato com nosssa equipe.</p>
+
           </div>
         </section>
       </div>
@@ -62,20 +102,41 @@
             >
           </div>
           <div class="contact_form">
-            <form method="post">
+            <div
+              id="mensagem-sucesso"
+              class="mensagem sucesso"
+              style="display: none"
+            ></div>
+            <div
+              id="mensagem-erro"
+              class="mensagem erro"
+              style="display: none"
+            ></div>
+            <form id="contact-form">
               <div>
                 <label for="nome">Nome: </label>
                 <input type="text" id="nome" name="nome" required />
-                <small> * Obrigatório</small>
+                <small class="erro-mensagem" id="erro-nome"></small>
               </div>
               <div>
                 <label for="telefone">Telefone: </label>
-                <input type="tel" id="telefone" name="telefone" required />
-                <small> * Obrigatório</small>
+                <div class="telefone-input">
+                  <span class="ddd-prefix">+55</span>
+                  <input
+                    type="tel"
+                    id="telefone"
+                    name="telefone"
+                    required
+                    placeholder="(XX) XXXXX-XXXX"
+                    maxlength="15"
+                  />
+                </div>
+                <small class="erro-mensagem" id="erro-telefone"></small>
               </div>
               <div>
                 <label for="email">Email: </label>
                 <input type="email" id="email" name="email" />
+                <small class="erro-mensagem" id="erro-email"></small>
               </div>
               <input
                 type="hidden"
@@ -91,14 +152,8 @@
                   rows="5"
                   required
                 ></textarea>
-                <small> * Obrigatório</small>
+                <small class="erro-mensagem" id="erro-mensagem"></small>
               </div>
-              <!-- <div> -->
-              <!--   <label for="anexo">Anexo (Plantas):</label> -->
-              <!--   <input type="file" id="anexo" name="anexo" accept=".dwg,.pdf,.ifc,.rvt,.pln,.dgn,.skp" /><br /> -->
-              <!--   <small>Formatos aceitos: DWG, PDF, IFC, Revit (RVT), ArchiCAD (PLN), -->
-              <!--     MicroStation (DGN), SketchUp (SKP)</small> -->
-              <!-- </div> -->
               <button type="submit">Enviar</button>
             </form>
           </div>
@@ -131,7 +186,6 @@
         </div>
       </footer>
     </div>
-
     <script src="app.js"></script>
   </body>
 </html>
