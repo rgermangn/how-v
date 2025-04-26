@@ -86,28 +86,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
-// document.addEventListener('DOMContentLoaded', function() {
-//   const contactForm = document.querySelector('.contact_form form');
-//
-//   if (contactForm) {
-//     contactForm.addEventListener('submit', function(event) {
-//       event.preventDefault();
-//
-//       emailjs.sendForm('service_778o4kx', 'template_k3vkc3o', this, 'IRTkKtAAwJi9o-y5x')
-//         .then((result) => {
-//           console.log('Sucesso:', result.text);
-//           alert('Mensagem enviada com sucesso!');
-//           this.reset();
-//         }, (error) => {
-//           console.error('Erro:', error.text);
-//           alert('Houve um erro ao enviar a mensagem.');
-//         });
-//     });
-//   } else {
-//     console.log('Formulário de contato não encontrado.');
-//   }
-// });
-
 
 
 // portfolio
