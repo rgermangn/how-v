@@ -44,7 +44,6 @@ document.querySelectorAll('.carousel-item').forEach((item, index) => {
 
 // Inicializar o primeiro como ativo
 moveToSlide(currentSlide);
-
 // Integração do EmailJS para o formulário de contato
 document.addEventListener('DOMContentLoaded', function() {
   const form = document.getElementById('contact_form');
@@ -52,32 +51,42 @@ document.addEventListener('DOMContentLoaded', function() {
   form.addEventListener('submit', function(event) {
     event.preventDefault();
     
-    const formData = {
-      nome: document.getElementById('nome').value,
-      telefone: document.getElementById('telefone').value,
-      email: document.getElementById('email').value || "Não informado",
-      assunto: document.getElementById('assunto').value,
-      mensagem: document.getElementById('mensagem').value
-    };
-    
     const submitButton = form.querySelector('button[type="submit"]');
     submitButton.disabled = true;
     submitButton.textContent = 'Enviando...';
     
-    fetch('/api/send-email', {
+    // Coletando dados do formulário
+    const data = {
+      service_id: 'service_mw071o4',
+      template_id: 'template_k3vkc3o',
+      user_id: 'IRTkKtAAwJi9o-y5x',
+      template_params: {
+        'nome': document.getElementById('nome').value,
+        'telefone': document.getElementById('telefone').value,
+        'email': document.getElementById('email').value || "Não informado",
+        'assunto': document.getElementById('assunto').value,
+        'mensagem': document.getElementById('mensagem').value
+      }
+    };
+    
+    // Enviando o email usando a API do EmailJS
+    fetch('https://api.emailjs.com/api/v1.0/email/send', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(formData)
+      body: JSON.stringify(data)
     })
-    .then(response => response.json())
-    .then(data => {
-      alert('Mensagem enviada com sucesso!');
-      form.reset();
+    .then(response => {
+      if (response.ok) {
+        alert('Mensagem enviada com sucesso!');
+        form.reset();
+      } else {
+        throw new Error('Falha no envio');
+      }
     })
     .catch(error => {
-      alert('Erro ao enviar mensagem');
+      alert('Erro ao enviar mensagem: ' + error.message);
       console.error('Error:', error);
     })
     .finally(() => {
@@ -86,8 +95,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
-
-
 // portfolio
 
 function toggleDetails(card) {
