@@ -48,28 +48,20 @@ moveToSlide(currentSlide);
 // Integração do EmailJS para o formulário de contato
 document.addEventListener('DOMContentLoaded', function() {
   const form = document.getElementById('contact_form');
-
+  
   form.addEventListener('submit', function(event) {
-    event.preventDefault(); // prevent reload
-
-    const formData = new FormData(this);
-    formData.append('service_id', 'service_778o4kx');
-    formData.append('template_id', 'template_k3vkc3o');
-    formData.append('user_id', 'IRTkKtAAwJi9o-y5x');
-
-    fetch('https://api.emailjs.com/api/v1.0/email/send-form', {
-      method: 'POST',
-      body: formData
-    })
-    .then(response => response.json())
-    .then(data => {
-      console.log('Success:', data);
-      alert('Seu email foi enviado!');
-    })
-    .catch(error => {
-      console.error('Error:', error);
-      alert('Ops... Algo deu errado: ' + JSON.stringify(error));
-    });
+    event.preventDefault();
+    
+    // Melhor prática: carregar as credenciais de um arquivo .env ou variáveis de ambiente
+    emailjs.sendForm('service_778o4kx', 'template_k3vkc3o', this)
+      .then(function(response) {
+        console.log('Success:', response);
+        alert('Seu email foi enviado!');
+        form.reset(); // Limpar o formulário após envio bem-sucedido
+      }, function(error) {
+        console.error('Error:', error);
+        alert('Ops... Algo deu errado. Por favor, tente novamente.');
+      });
   });
 });
 
