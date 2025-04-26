@@ -47,26 +47,53 @@ moveToSlide(currentSlide);
 
 // Integração do EmailJS para o formulário de contato
 document.addEventListener('DOMContentLoaded', function() {
-  const contactForm = document.querySelector('.contact_form form');
+  const form = document.getElementById('contact_form');
 
-  if (contactForm) {
-    contactForm.addEventListener('submit', function(event) {
-      event.preventDefault();
+  form.addEventListener('submit', function(event) {
+    event.preventDefault(); // prevent reload
 
-      emailjs.sendForm('service_778o4kx', 'template_k3vkc3o', this, 'IRTkKtAAwJi9o-y5x')
-        .then((result) => {
-          console.log('Sucesso:', result.text);
-          alert('Mensagem enviada com sucesso!');
-          this.reset();
-        }, (error) => {
-          console.error('Erro:', error.text);
-          alert('Houve um erro ao enviar a mensagem.');
-        });
+    const formData = new FormData(this);
+    formData.append('service_id', 'service_778o4kx');
+    formData.append('template_id', 'template_k3vkc3o');
+    formData.append('user_id', 'IRTkKtAAwJi9o-y5x');
+
+    fetch('https://api.emailjs.com/api/v1.0/email/send-form', {
+      method: 'POST',
+      body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+      console.log('Success:', data);
+      alert('Seu email foi enviado!');
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      alert('Ops... Algo deu errado: ' + JSON.stringify(error));
     });
-  } else {
-    console.log('Formulário de contato não encontrado.');
-  }
+  });
 });
+
+// document.addEventListener('DOMContentLoaded', function() {
+//   const contactForm = document.querySelector('.contact_form form');
+//
+//   if (contactForm) {
+//     contactForm.addEventListener('submit', function(event) {
+//       event.preventDefault();
+//
+//       emailjs.sendForm('service_778o4kx', 'template_k3vkc3o', this, 'IRTkKtAAwJi9o-y5x')
+//         .then((result) => {
+//           console.log('Sucesso:', result.text);
+//           alert('Mensagem enviada com sucesso!');
+//           this.reset();
+//         }, (error) => {
+//           console.error('Erro:', error.text);
+//           alert('Houve um erro ao enviar a mensagem.');
+//         });
+//     });
+//   } else {
+//     console.log('Formulário de contato não encontrado.');
+//   }
+// });
 
 
 
