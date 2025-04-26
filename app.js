@@ -67,3 +67,11 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('Formulário de contato não encontrado.');
   }
 });
+
+
+
+// portfolio
+
+function toggleDetails(card) {
+  card.classList.toggle('open');
+}
