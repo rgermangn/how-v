@@ -332,6 +332,23 @@ footer {
   /* Cor azul mais escura no hover */
 }
 
+.mensagem {
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.mensagem.sucesso {
+  background-color: #4caf50;
+  color: white;
+}
+
+.mensagem.erro {
+  background-color: #f44336;
+  color: white;
+}
+
 .whatsapp {
   text-align: center;
   /* Centraliza o link */
@@ -369,8 +386,6 @@ footer {
   vertical-align: bottom;
   /* Alinha verticalmente o ícone com o texto (alternativa ao align-items) */
 }
-
-
 
 /* portfolio */
 
@@ -438,17 +453,19 @@ footer {
   max-height: 0;
   text-align: left;
   overflow: hidden;
-  transition: max-height 0.4s ease, padding 0.4s ease;
+  transition:
+    max-height 0.4s ease,
+    padding 0.4s ease;
   padding: 0 20px;
   font-size: 0.95rem;
   color: #555;
 }
 
 .portfolio-item.open .details {
-  max-height: 500px; /* Altura máxima quando aberto */
+  max-height: 500px;
+  /* Altura máxima quando aberto */
   padding: 20px;
 }
-
 
 /* Responsive styles */
 @media (max-width: 900px) {

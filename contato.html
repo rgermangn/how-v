@@ -27,13 +27,31 @@
         .getElementById("contact-form")
         .addEventListener("submit", function (event) {
           event.preventDefault();
-          // these IDs from the previous steps
-          emailjs.sendForm("service_ibi01gb", "template_50bp81i", this).then(
-            () => {
-              console.log("SUCCESS!");
+
+          const mensagemSucesso = document.getElementById("mensagem-sucesso");
+          const mensagemErro = document.getElementById("mensagem-erro");
+
+          emailjs.sendForm("service_ibi01gb", "template_k3vkc3o", this).then(
+            (response) => {
+              console.log("SUCCESS!", response);
+              mensagemSucesso.textContent = "Mensagem enviada com sucesso!";
+              mensagemSucesso.style.display = "block";
+              mensagemErro.style.display = "none"; // Garante que a mensagem de erro esteja escondida
+
+              // Opcional: Limpar o formulário após o sucesso
+              document.getElementById("contact-form").reset();
+
+              // Opcional: Esconder a mensagem de sucesso após alguns segundos
+              setTimeout(() => {
+                mensagemSucesso.style.display = "none";
+              }, 5000); // 5000 milissegundos = 5 segundos
             },
             (error) => {
               console.log("FAILED...", error);
+              mensagemErro.textContent =
+                "Ocorreu um erro ao enviar a mensagem.";
+              mensagemErro.style.display = "block";
+              mensagemSucesso.style.display = "none"; // Garante que a mensagem de sucesso esteja escondida
             },
           );
         });
@@ -72,6 +90,8 @@
             Fale conosco pelo WhatsApp</a>
         </div>
         <div class="contact_form">
+          <div id="mensagem-sucesso" class="mensagem sucesso" style="display: none"></div>
+          <div id="mensagem-erro" class="mensagem erro" style="display: none"></div>
           <form id="contact-form">
             <div>
               <label for="nome">Nome: </label>
@@ -99,7 +119,7 @@
             <!--   <small>Formatos aceitos: DWG, PDF, IFC, Revit (RVT), ArchiCAD (PLN), -->
             <!--     MicroStation (DGN), SketchUp (SKP)</small> -->
             <!-- </div> -->
-            <button type="submit" value="enviar_formulario">Enviar</button>
+            <button type="submit">Enviar</button>
           </form>
         </div>
       </div>
