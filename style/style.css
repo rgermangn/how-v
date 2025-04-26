@@ -278,7 +278,6 @@ footer {
 
 /* Estilos para os inputs de texto, telefone e email */
 .contact_form input[type="text"],
-.contact_form input[type="tel"],
 .contact_form input[type="email"] {
   width: calc(100% - 12px);
   /* Largura total menos o padding */
@@ -332,6 +331,53 @@ footer {
   /* Cor azul mais escura no hover */
 }
 
+.mensagem {
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.mensagem.sucesso {
+  background-color: #4caf50;
+  color: white;
+}
+
+.mensagem.erro {
+  background-color: #f44336;
+  color: white;
+}
+
+.erro-mensagem {
+  display: block;
+  color: red;
+  font-size: 0.8em;
+  margin-top: 5px;
+}
+
+.telefone-input {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  /* Adicione borda para simular um input */
+  border-radius: 5px;
+  overflow: hidden;
+  /* Garante que o prefixo não ultrapasse a borda */
+}
+
+.telefone-input span {
+  background-color: #eee;
+  padding: 10px;
+  border-right: 1px solid #ccc;
+}
+
+.telefone-input input[type="tel"] {
+  border: none;
+  padding: 10px;
+  flex-grow: 1;
+  outline: none;
+}
+
 .whatsapp {
   text-align: center;
   /* Centraliza o link */
@@ -369,8 +415,6 @@ footer {
   vertical-align: bottom;
   /* Alinha verticalmente o ícone com o texto (alternativa ao align-items) */
 }
-
-
 
 /* portfolio */
 
@@ -438,17 +482,19 @@ footer {
   max-height: 0;
   text-align: left;
   overflow: hidden;
-  transition: max-height 0.4s ease, padding 0.4s ease;
+  transition:
+    max-height 0.4s ease,
+    padding 0.4s ease;
   padding: 0 20px;
   font-size: 0.95rem;
   color: #555;
 }
 
 .portfolio-item.open .details {
-  max-height: 500px; /* Altura máxima quando aberto */
+  max-height: 500px;
+  /* Altura máxima quando aberto */
   padding: 20px;
 }
-
 
 /* Responsive styles */
 @media (max-width: 900px) {
