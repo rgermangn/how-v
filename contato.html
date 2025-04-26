@@ -1,5 +1,31 @@
 <!doctype html>
 <html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="assets/image/logokeytogo.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="style/style.css" />
+    <title>Key To Go</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init("IRTkKtAAwJi9o-y5x");
+      })();
+    </script>
+  </head>
 
   <body class="contato_container">
     <div class="keytogo-container">
@@ -14,81 +40,98 @@
           <a href="diario.html" target="_self" rel="external">Diário</a>
         </nav>
       </header>
-      
-    <div class="hero-wrapper">
-      <section class="hero">
-        <div class="hero-text">
-          <h1>Sua mensagem é o primeiro passo. Conte-nos o que precisa.</h1>
-          <p>Obra segura, gestão precisa, entrega garantida.</p>
+
+      <div class="hero-wrapper">
+        <section class="hero">
+          <div class="hero-text">
+            <h1>Sua mensagem é o primeiro passo . Conte-nos o que precisa .</h1>
+            <p>Entre em contato com nosssa equipe.</p>
+          </div>
+        </section>
+      </div>
+
+      <section class="contact">
+        <div class="contact_container">
+          <div class="whatsapp">
+            <a href="https://wa.me/5541996669588" target="_blank"
+              ><img
+                src="assets/image/whatsapp.svg"
+                alt="Ícone WhatsApp"
+              /><br />
+              Fale conosco pelo WhatsApp</a
+            >
+          </div>
+          <div class="contact_form">
+            <form method="post">
+              <div>
+                <label for="nome">Nome: </label>
+                <input type="text" id="nome" name="nome" required />
+                <small> * Obrigatório</small>
+              </div>
+              <div>
+                <label for="telefone">Telefone: </label>
+                <input type="tel" id="telefone" name="telefone" required />
+                <small> * Obrigatório</small>
+              </div>
+              <div>
+                <label for="email">Email: </label>
+                <input type="email" id="email" name="email" />
+              </div>
+              <input
+                type="hidden"
+                id="assunto"
+                name="assunto"
+                value="Contato via site"
+              />
+              <div>
+                <label for="mensagem">Mensagem: </label>
+                <textarea
+                  id="mensagem"
+                  name="mensagem"
+                  rows="5"
+                  required
+                ></textarea>
+                <small> * Obrigatório</small>
+              </div>
+              <!-- <div> -->
+              <!--   <label for="anexo">Anexo (Plantas):</label> -->
+              <!--   <input type="file" id="anexo" name="anexo" accept=".dwg,.pdf,.ifc,.rvt,.pln,.dgn,.skp" /><br /> -->
+              <!--   <small>Formatos aceitos: DWG, PDF, IFC, Revit (RVT), ArchiCAD (PLN), -->
+              <!--     MicroStation (DGN), SketchUp (SKP)</small> -->
+              <!-- </div> -->
+              <button type="submit">Enviar</button>
+            </form>
+          </div>
         </div>
       </section>
+
+      <footer>
+        <div class="footer-section">
+          <h3>Informações</h3>
+          <p>Endereço</p>
+          <p>&#9742;: +55 (41) 9 9666-9588</p>
+          <p>Email</p>
+        </div>
+        <div class="footer-section">
+          <h3>Links úteis</h3>
+          <p>Política de Privacidade</p>
+          <p>Termos de Uso</p>
+          <p>Suporte</p>
+        </div>
+        <div class="footer-section">
+          <h3>Redes Sociais</h3>
+          <p>Facebook</p>
+          <a
+            href="https://www.instagram.com/key_to_go_gestao_de_obra_/"
+            taget="_blank"
+          >
+            <p>Instagram</p>
+          </a>
+          <p>LinkedIn</p>
+        </div>
+      </footer>
     </div>
 
-    <section class="contact">
-      <div class="contact_container">
-        <div class="whatsapp">
-          <a href="https://wa.me/5541996669588" target="_blank"><img src="assets/image/whatsapp.svg"
-              alt="Ícone WhatsApp" /><br />
-            Fale conosco pelo WhatsApp</a>
-        </div>
-        <div class="contact_form">
-          <div id="mensagem-sucesso" class="mensagem sucesso" style="display: none"></div>
-          <div id="mensagem-erro" class="mensagem erro" style="display: none"></div>
-          <form id="contact-form">
-            <div>
-              <label for="nome">Nome: </label>
-              <input type="text" id="nome" name="nome" required />
-              <small class="erro-mensagem" id="erro-nome"></small>
-            </div>
-            <div>
-              <label for="telefone">Telefone: </label>
-              <div class="telefone-input">
-                <span class="ddd-prefix">+55</span>
-                <input type="tel" id="telefone" name="telefone" required placeholder="(XX) XXXXX-XXXX" maxlength="15" />
-              </div>
-              <small class="erro-mensagem" id="erro-telefone"></small>
-            </div>
-            <div>
-              <label for="email">Email: </label>
-              <input type="email" id="email" name="email" />
-              <small class="erro-mensagem" id="erro-email"></small>
-            </div>
-            <input type="hidden" id="assunto" name="assunto" value="Contato via site" />
-            <div>
-              <label for="mensagem">Mensagem: </label>
-              <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
-              <small class="erro-mensagem" id="erro-mensagem"></small>
-            </div>
-            <button type="submit">Enviar</button>
-          </form>
-        </div>
-      </div>
-    </section>
-
-    <footer>
-      <div class="footer-section">
-        <h3>Informações</h3>
-        <p>Endereço</p>
-        <p>&#9742;: +55 (41) 9 9666-9588</p>
-        <p>Email</p>
-      </div>
-      <div class="footer-section">
-        <h3>Links úteis</h3>
-        <p>Política de Privacidade</p>
-        <p>Termos de Uso</p>
-        <p>Suporte</p>
-      </div>
-      <div class="footer-section">
-        <h3>Redes Sociais</h3>
-        <p>Facebook</p>
-        <a href="https://www.instagram.com/key_to_go_gestao_de_obra_/" taget="_blank">
-          <p>Instagram</p>
-        </a>
-        <p>LinkedIn</p>
-      </div>
-    </footer>
-  </div>
-  <script src="app.js"></script>
-</body>
-
+    <script src="app.js"></script>
+  </body>
 </html>
