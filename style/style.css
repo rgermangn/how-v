@@ -127,9 +127,11 @@ nav a:hover:after {
 }
 
 .hero-image img {
+  width: 700px;
   min-width: auto;
   object-fit: cover;
   border-radius: 15px;
+  box-shadow: 10px 5px 5px #1a19351f;
   transition: transform 0.3s;
 }
 

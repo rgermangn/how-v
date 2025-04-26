@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="assets/image/logokeytogo.png" type="image/x-icon" />
+  <link rel="stylesheet" href="style/style.css" />
+  <title>Sobre</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet" />
+
+    <style>
+        body {
+          margin: 0;
+          font-family: 'Segoe UI', sans-serif;
+          background-color: #ffffffcc;
+          color: #171524;
+        }
+    
+        header {
+            display: flex;
+          background-color: #1a1935;
+          color: rgb(255, 255, 255);
+          text-align: center;
+          
+        }
+    
+        nav ul {
+          list-style: none;
+          padding: 0;
+          display: flex;
+          justify-content: center;
+          gap: 20px;
+          margin-top: 10px;
+        }
+    
+        nav a {
+          color: white;
+          text-decoration: none;
+          font-weight: 500;
+        }
+
+        section {
+          padding: 40px 10px;
+          max-width: 1000px;
+          margin: auto;
+        }
+    
+        section h2 {
+          font-size: 2em;
+          padding: 40px 0px;
+          margin-bottom: 10px;
+          color: #1c222b;
+        }
+    
+        section p {
+          line-height: 1.6;
+          margin-bottom: 15px;
+        }
+
+        .textosobre {
+            text-align: justify;
+            text-indent: 30px;
+        }
+
+        .textopublico {
+            text-align: justify;
+            text-indent: 30px;
+        }
+    
+        .portfolio {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+          gap: 20px;
+          margin-top: 30px;
+        }
+    
+        .portfolio img {
+          width: 100%;
+          height: 180px;
+          object-fit: cover;
+          border-radius: 12px;
+          box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+          transition: transform 0.3s;
+        }
+    
+        .portfolio img:hover {
+          transform: scale(1.03);
+        }
+
+        footer {
+          background-color: #eee;
+          display: flex;
+          justify-content: center;
+          text-align: center;
+          padding: 20px;
+          font-size: 0.9em;
+          color: #666;
+        }
+    
+        @media (max-width: 600px) {
+          nav ul {
+            flex-direction: column;
+            gap: 10px;
+          }
+    
+          section {
+            padding: 40px 15px;
+          }
+        }
+      </style>
+
+</head>
+
+<body>
+  <div class="keytogo-container">
+    <header>
+        <div class="logo">KEY TO GO</div>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <nav id="nav-menu">
+          <a href="../index.html">Home</a>
+          <a href="#">Sobre</a>
+          <a href="#">Portfólio</a>
+          <a href="#">Contato</a>
+          <a href="#">Serviços</a>
+          <a href="#">Diário</a>
+        </nav>
+      </header>
+
+    <body>
+
+        <!-- Seção Início -->
+        <section id="inicio">
+          <h2>Bem-vindo!</h2>
+          <p>É um prazer ter você aqui.
+              Na nossa construtora, cada projeto começa com confiança e termina com orgulho.
+              Vamos construir algo incrível juntos.</p>
+        </section>
+      
+        <!-- Seção Sobre -->
+        <section id="sobre">
+          <h2>Quem somos</h2>
+          
+            <p class="textosobre">
+                A empressa conta com profissionais de vasta experiência na área da arquitetura de interiores, tanto residencial quanto comercial e realizam por volta de 17 projetos por ano, principalmente em Santa Catarina, Paraná e São Paulo, e contam com mais de 360 obras entregues. A frase “Qualidade, compromisso e rigoroso prazo de entrega” é utilizada como seu slogan.
+            </p> 
+
+            <p class="textosobre">
+                A empresa presta o serviço completo, desde a concepção do projeto de arquitetura até a entrega da obra concluída, devido a sua equipe estruturada pelos setores comercial, financeiro, operacional e de orçamentos diversos. Os serviços incluem a visita técnica ao local, planejamento, criação do projeto com orçamento completo, incluindo opções de fornecedores, e prazo até o término da obra, trabalham com contrato, a gestão do projeto, execução do projeto com equipe especializada e o acompanhamento da obra no local.
+
+            </p>  
+            
+            <p class="textosobre">
+                A representante, Adriana Paiffer, garante que nunca quebrou um contrato pelo prazo, e sempre entregam um projeto com o melhor custo para o cliente, pois há uma equipe dedicada a encontrar os produtos certos para a obra com o melhor custo. Além disso, os projetos eficientes e suas parcerias com a marcenaria e marmoraria agilizam a entrega de produtos completos, sem a necessidade de dividir em etapas. Ela também conta que está sempre disponível para atendimentos e consultas, tanto durante a fase da obra, quando pós-obra, tirando dúvidas dos clientes que possam precisar de algum reparo ou reforma por exemplo.
+            </p> 
+          
+        </section>
+
+        <section id="inicio">
+            <h2>Público-alvo</h2>
+            <p class="textopublico">
+                O público-alvo da KEY TO GO é formado por pessoas ou empresas que buscam uma solução completa para o interior de sua residência ou estabelecimento comercial, com garantia de entrega dentro do prazo e orçamento estabelecido no contrato.
+            </p>
+
+                <p class="textopublico">
+                    A lista de clientes da empresa de arquitetura KEY TO GO inclui, construtoras, clínicas, edifícios e pessoas físicas. 
+                </p>
+          </section>
+      
+        <!-- Seção Portfólio -->
+        <section id="portfolio">
+          <h2>Conheça alguns de nossos projetos</h2>
+          <div class="portfolio">
+            <img src="../assets/image/cozinha1.png" alt="Projeto Residencial 1">
+            <img src="../assets/image/quarto1.png" alt="Projeto Comercial 2">
+            <img src="../assets/image/sala2.png" alt="Interior Design 3">
+            <img src="../assets/image/sala1.png">
+            <img src="../assets/image/reforma.png" alt="Interior Design 3">
+            <img src="../assets/image/cozinha2.png" alt="Interior Design 3">
+          </div>
+        </section>
+      
+        <!-- Rodapé -->
+        <footer>
+          <p>&copyKey To Go 2025.  Todos os direitos reservados.</p>
+        </footer>
+      
+      </body>
+      </html>
