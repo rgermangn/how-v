@@ -1,20 +1,78 @@
 <!doctype html>
 <html lang="pt-BR">
 
-  <body class="contato_container">
-    <div class="keytogo-container">
-      <header>
-        <div class="logo">KEY TO GO</div>
-        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-        <nav id="nav-menu">
-          <a href="index.html" target="_self" rel="external">Home</a>
-          <a href="sobre.html" target="_self" rel="external">Sobre</a>
-          <a href="portfolio.html" target="_self" rel="external">Portfólio</a>
-          <a href="contato.html" target="_self" rel="external">Contato</a>
-          <a href="diario.html" target="_self" rel="external">Diário</a>
-        </nav>
-      </header>
-      
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="assets/image/logokeytogo.png" type="image/x-icon" />
+  <link rel="stylesheet" href="style/style.css" />
+  <title>Key To Go</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet" />
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function () {
+      // https://dashboard.emailjs.com/admin/account
+      emailjs.init({
+        publicKey: "Tgo8Pm5fDkJxrbGid",
+      });
+    })();
+  </script>
+  <script type="text/javascript">
+    window.onload = function () {
+      document
+        .getElementById("contact-form")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          const mensagemSucesso = document.getElementById("mensagem-sucesso");
+          const mensagemErro = document.getElementById("mensagem-erro");
+
+          emailjs.sendForm("service_ibi01gb", "template_k3vkc3o", this).then(
+            (response) => {
+              console.log("SUCCESS!", response);
+              mensagemSucesso.textContent = "Mensagem enviada com sucesso!";
+              mensagemSucesso.style.display = "block";
+              mensagemErro.style.display = "none"; // Garante que a mensagem de erro esteja escondida
+
+              // Opcional: Limpar o formulário após o sucesso
+              document.getElementById("contact-form").reset();
+
+              // Opcional: Esconder a mensagem de sucesso após alguns segundos
+              setTimeout(() => {
+                mensagemSucesso.style.display = "none";
+              }, 5000); // 5000 milissegundos = 5 segundos
+            },
+            (error) => {
+              console.log("FAILED...", error);
+              mensagemErro.textContent =
+                "Ocorreu um erro ao enviar a mensagem.";
+              mensagemErro.style.display = "block";
+              mensagemSucesso.style.display = "none"; // Garante que a mensagem de sucesso esteja escondida
+            },
+          );
+        });
+    };
+  </script>
+</head>
+
+<body class="contato_container">
+  <div class="keytogo-container">
+    <header>
+      <div class="logo">KEY TO GO</div>
+      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+      <nav id="nav-menu">
+        <a href="index.html" target="_self" rel="external">Home</a>
+        <a href="sobre.html" target="_self" rel="external">Sobre</a>
+        <a href="portfolio.html" target="_self" rel="external">Portfólio</a>
+        <a href="contato.html" target="_self" rel="external">Contato</a>
+        <a href="diario.html" target="_self" rel="external">Diário</a>
+      </nav>
+    </header>
+
     <div class="hero-wrapper">
       <section class="hero">
         <div class="hero-text">

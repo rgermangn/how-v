@@ -13,6 +13,12 @@ body {
   overflow-x: hidden;
 }
 
+.diario_instagram {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .contato_container {
   background-color: #ebebeb;
 }
