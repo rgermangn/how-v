@@ -17,7 +17,7 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background-color: #ffffffcc;
+      background-color: #ffffff;
       color: #171524;
     }
 
@@ -41,7 +41,7 @@
     nav a {
       color: white;
       text-decoration: none;
-      font-weight: 500;
+      font-weight: 00;
     }
 
     section {
@@ -52,8 +52,8 @@
 
     section h2 {
       font-size: 2em;
-      padding: 40px 0px;
-      margin-bottom: 10px;
+      padding: 30px 0px;
+      margin-bottom: 0px;
       color: #1c222b;
     }
 
@@ -76,15 +76,15 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
-      margin-top: 30px;
+      border-radius: 30px;
     }
 
     .portfolio img {
       width: 100%;
-      height: 180px;
+      height: 230px;
       object-fit: cover;
       border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.205);
       transition: transform 0.3s;
     }
 
@@ -93,19 +93,19 @@
     }
 
     footer {
-      background-color: #eee;
+      background-color: #1a1935;
       display: flex;
       justify-content: center;
       text-align: center;
       padding: 20px;
       font-size: 0.9em;
-      color: #666;
+      color: #ffffff;
     }
 
     @media (max-width: 600px) {
       nav ul {
         flex-direction: column;
-        gap: 10px;
+        gap: 20px;
       }
 
       section {
@@ -122,12 +122,11 @@
       <div class="logo">KEY TO GO</div>
       <div class="menu-toggle" onclick="toggleMenu()">☰</div>
       <nav id="nav-menu">
-        <a href="index.html">Home</a>
-        <a href="#">Sobre</a>
-        <a href="#">Portfólio</a>
-        <a href="#">Contato</a>
-        <a href="#">Serviços</a>
-        <a href="#">Diário</a>
+        <a href="index.html" target="_self" rel="external">Home</a>
+        <a href="sobre.html" target="_self" rel="external">Sobre</a>
+        <a href="portfolio.html" target="_self" rel="external">Portfólio</a>
+        <a href="contato.html" target="_self" rel="external">Contato</a>
+        <a href="diario.html" target="_self" rel="external">Diário</a>
       </nav>
     </header>
 
@@ -136,7 +135,7 @@
       <!-- Seção Início -->
       <section id="inicio">
         <h2>Bem-vindo!</h2>
-        <p>É um prazer ter você aqui.
+        <p class="textosobre">É um prazer ter você aqui.
           Na nossa construtora, cada projeto começa com confiança e termina com orgulho.
           Vamos construir algo incrível juntos.</p>
       </section>
@@ -188,7 +187,7 @@
 
       <!-- Seção Portfólio -->
       <section id="portfolio">
-        <h2>Conheça alguns de nossos projetos</h2>
+        <h2 class="textopublico">Conheça alguns de nossos projetos</h2>
         <div class="portfolio">
           <img src="assets/image/cozinha1.png" alt="Projeto Residencial 1">
           <img src="assets/image/quarto1.png" alt="Projeto Comercial 2">
@@ -204,6 +203,8 @@
         <p>&copyKey To Go 2025. Todos os direitos reservados.</p>
       </footer>
 
+      <script src="app.js"></script>
+      
     </body>
 
 </html>
