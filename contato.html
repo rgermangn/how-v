@@ -96,29 +96,27 @@
             <div>
               <label for="nome">Nome: </label>
               <input type="text" id="nome" name="nome" required />
-              <small> * Obrigatório</small>
+              <small class="erro-mensagem" id="erro-nome"></small>
             </div>
             <div>
               <label for="telefone">Telefone: </label>
-              <input type="tel" id="telefone" name="telefone" required />
-              <small> * Obrigatório</small>
+              <div class="telefone-input">
+                <span class="ddd-prefix">+55</span>
+                <input type="tel" id="telefone" name="telefone" required placeholder="(XX) XXXXX-XXXX" maxlength="15" />
+              </div>
+              <small class="erro-mensagem" id="erro-telefone"></small>
             </div>
             <div>
               <label for="email">Email: </label>
               <input type="email" id="email" name="email" />
+              <small class="erro-mensagem" id="erro-email"></small>
             </div>
             <input type="hidden" id="assunto" name="assunto" value="Contato via site" />
             <div>
               <label for="mensagem">Mensagem: </label>
               <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
-              <small> * Obrigatório</small>
+              <small class="erro-mensagem" id="erro-mensagem"></small>
             </div>
-            <!-- <div> -->
-            <!--   <label for="anexo">Anexo (Plantas):</label> -->
-            <!--   <input type="file" id="anexo" name="anexo" accept=".dwg,.pdf,.ifc,.rvt,.pln,.dgn,.skp" /><br /> -->
-            <!--   <small>Formatos aceitos: DWG, PDF, IFC, Revit (RVT), ArchiCAD (PLN), -->
-            <!--     MicroStation (DGN), SketchUp (SKP)</small> -->
-            <!-- </div> -->
             <button type="submit">Enviar</button>
           </form>
         </div>

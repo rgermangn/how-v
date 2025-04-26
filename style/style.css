@@ -278,7 +278,6 @@ footer {
 
 /* Estilos para os inputs de texto, telefone e email */
 .contact_form input[type="text"],
-.contact_form input[type="tel"],
 .contact_form input[type="email"] {
   width: calc(100% - 12px);
   /* Largura total menos o padding */
@@ -347,6 +346,36 @@ footer {
 .mensagem.erro {
   background-color: #f44336;
   color: white;
+}
+
+.erro-mensagem {
+  display: block;
+  color: red;
+  font-size: 0.8em;
+  margin-top: 5px;
+}
+
+.telefone-input {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  /* Adicione borda para simular um input */
+  border-radius: 5px;
+  overflow: hidden;
+  /* Garante que o prefixo não ultrapasse a borda */
+}
+
+.telefone-input span {
+  background-color: #eee;
+  padding: 10px;
+  border-right: 1px solid #ccc;
+}
+
+.telefone-input input[type="tel"] {
+  border: none;
+  padding: 10px;
+  flex-grow: 1;
+  outline: none;
 }
 
 .whatsapp {
